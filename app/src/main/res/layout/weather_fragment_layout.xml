@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/temp_graph"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@id/graph_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/graph_guideline"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <ScrollView
+        android:id="@+id/forecast_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/graph_guideline">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:visibility="visible"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/forecast_day_1"
+                layout="@layout/next_day_forecast_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@id/forecast_day_2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/forecast_day_2"
+                layout="@layout/next_day_forecast_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@id/forecast_day_3"
+                app:layout_constraintTop_toBottomOf="@id/forecast_day_1" />
+
+            <include
+                android:id="@+id/forecast_day_3"
+                layout="@layout/next_day_forecast_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@id/forecast_day_4"
+                app:layout_constraintTop_toBottomOf="@id/forecast_day_2" />
+
+            <include
+                android:id="@+id/forecast_day_4"
+                layout="@layout/next_day_forecast_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@id/forecast_day_5"
+                app:layout_constraintTop_toBottomOf="@id/forecast_day_3" />
+
+            <include
+                android:id="@+id/forecast_day_5"
+                layout="@layout/next_day_forecast_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/forecast_day_4" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/loading_layout"
+        layout="@layout/loading_layout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

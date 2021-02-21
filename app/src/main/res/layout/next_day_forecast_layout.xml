@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/date_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="20/02/2020"
+        android:text="@string/empty_date"/>
+
+    <include
+        android:id="@+id/forecast_0000"
+        layout="@layout/hour_temp_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintEnd_toStartOf="@id/forecast_0300"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/forecast_0300"
+        layout="@layout/hour_temp_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@id/forecast_1500"
+        app:layout_constraintEnd_toStartOf="@id/forecast_0600"
+        app:layout_constraintStart_toEndOf="@id/forecast_0000"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/forecast_0600"
+        layout="@layout/hour_temp_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@id/forecast_1500"
+        app:layout_constraintEnd_toStartOf="@id/forecast_0900"
+        app:layout_constraintStart_toEndOf="@id/forecast_0300"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/forecast_0900"
+        layout="@layout/hour_temp_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@id/forecast_1500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/forecast_0600"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/forecast_1200"
+        layout="@layout/hour_temp_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/forecast_1500"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/forecast_0000" />
+
+
+    <include
+        android:id="@+id/forecast_1500"
+        layout="@layout/hour_temp_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/forecast_1800"
+        app:layout_constraintStart_toEndOf="@id/forecast_1200"
+        app:layout_constraintTop_toBottomOf="@id/forecast_0000" />
+
+    <include
+        android:id="@+id/forecast_1800"
+        layout="@layout/hour_temp_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/forecast_2100"
+        app:layout_constraintStart_toEndOf="@id/forecast_1500"
+        app:layout_constraintTop_toBottomOf="@id/forecast_0000" />
+
+    <include
+        android:id="@+id/forecast_2100"
+        layout="@layout/hour_temp_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/forecast_1800"
+        app:layout_constraintTop_toBottomOf="@id/forecast_0000" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">OpenWeatherMap</string>
+    <string name="celsius_unit">%s ºC</string>
+    <string name="empty_temp">-- ºC</string>
+    <string name="empty_date">--/--/--</string>
+    <string name="temperature">Temperature</string>
+</resources>
